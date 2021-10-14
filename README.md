@@ -20,3 +20,6 @@ not applied globally when we would reuse the same css class.
 Add in webpack.config.dev.js css options:
 modules: true,
 localIdentName: '[name]__[local]__[hash:base64:5]'
+
+### install props type for validation of the types of the properties
+npm install --save prop-types
