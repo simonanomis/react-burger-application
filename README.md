@@ -16,3 +16,7 @@ You will also see any lint errors in the console.
 ### enable css modules - eject 
 Making sure that the css classes that we create in css file can be scoped to a specific component, so that they are
 not applied globally when we would reuse the same css class. 
+#### npm run eject
+Add in webpack.config.dev.js css options:
+modules: true,
+localIdentName: '[name]__[local]__[hash:base64:5]'
