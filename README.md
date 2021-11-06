@@ -14,4 +14,10 @@ You will also see any lint errors in the console.
 ## Step by step building this app
 
 ## App UI 
+![img_1.png](img_1.png)
 
+### Order Summary
+![img.png](img.png)
+
+###Mobile Sidedrawer
+![img_2.png](img_2.png)
