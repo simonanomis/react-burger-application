@@ -4,8 +4,9 @@ import Burger from '../../components/Burger/Burger'
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal'
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary'
-//import axios from '../../axios-orders'
+import axios from '../../axios-orders'
 import Spinner from '../../components/UI/Spinner/Spinner'
+import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 
 const INGREDIENT_PRICES = {
     salad: 1,
@@ -39,29 +40,29 @@ class BurgerBuilder extends Component {
 
     orderContinueHandler = () => {
         this.setState({loading: true});
-        // const orderData = {
-        //     ingredients: this.state.ingredients,
-        //     price: this.state.totalPrice,
-        //     customer: {
-        //         name: 'Bella',
-        //         address: {
-        //             street: 'Nekoja ulica',
-        //             zipCode: '1000',
-        //             country: 'Macedonia'
-        //         },
-        //         email: 'test@test.com',
-        //     },
-        //     deliveryMethod: 'fastest'
-        // }
+        const orderData = {
+            ingredients: this.state.ingredients,
+            price: this.state.totalPrice,
+            customer: {
+                name: 'Bella',
+                address: {
+                    street: 'Nekoja ulica',
+                    zipCode: '1000',
+                    country: 'Macedonia'
+                },
+                email: 'test@test.com',
+            },
+            deliveryMethod: 'fastest'
+        }
 
-        // axios.post('/orders.json', orderData)
-        //     .then(response => {
-        //         this.setState({loading: false, isOrdering: false});
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //         this.setState({loading: false, isOrdering: false});
-        //     });
+        axios.post('/orders.json', orderData)
+            .then(response => {
+                this.setState({loading: false, isOrdering: false});
+            })
+            .catch(error => {
+                console.log(error)
+                this.setState({loading: false, isOrdering: false});
+            });
     }
 
     updatePurchaseState (ingredients) {
@@ -142,4 +143,4 @@ class BurgerBuilder extends Component {
     }
 }
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
