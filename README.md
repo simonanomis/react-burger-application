@@ -27,6 +27,9 @@ endpoints to the DB
 ### Install axios for setting HTTP requests
 
 `npm install axios --save`
+
+### Install routing package
+`npm install --save react-router-dom@5.3.0`
 ## App UI 
 
 ![img_1.png](img_1.png)
