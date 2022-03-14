@@ -27,6 +27,7 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props);
         axios.get('https://react-burger-http-app-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json')
             .then(response => {
                 this.setState({ingredients: response.data})
@@ -46,30 +47,31 @@ class BurgerBuilder extends Component {
     }
 
     orderContinueHandler = () => {
-        this.setState({loading: true});
-        const orderData = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: 'Bella',
-                address: {
-                    street: 'Nekoja ulica',
-                    zipCode: '1000',
-                    country: 'Macedonia'
-                },
-                email: 'test@test.com',
-            },
-            deliveryMethod: 'fastest'
-        }
+        // this.setState({loading: true});
+        // const orderData = {
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.totalPrice,
+        //     customer: {
+        //         name: 'Bella',
+        //         address: {
+        //             street: 'Nekoja ulica',
+        //             zipCode: '1000',
+        //             country: 'Macedonia'
+        //         },
+        //         email: 'test@test.com',
+        //     },
+        //     deliveryMethod: 'fastest'
+        // }
 
-        axios.post('/orders.json', orderData)
-            .then(response => {
-                this.setState({loading: false, isOrdering: false});
-            })
-            .catch(error => {
-                console.log(error)
-                this.setState({loading: false, isOrdering: false});
-            });
+        // axios.post('/orders.json', orderData)
+        //     .then(response => {
+        //         this.setState({loading: false, isOrdering: false});
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //         this.setState({loading: false, isOrdering: false});
+        //     });
+        this.props.history.push('/checkout');
     }
 
     updatePurchaseState (ingredients) {
