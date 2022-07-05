@@ -63,16 +63,21 @@ class ContactData extends Component {
     }
 
     orderHandler = (event) => {
-        event.preventDefault();
+        event.preventDefault(); // I dont want to send req automatically, that would reload the page
         this.setState({loading: true});
-        const orderData = {
-            ingredients: this.props.ingredients,
-            price: this.props.totalPrice,
 
-            deliveryMethod: 'fastest'
+        const formData = {};
+        for (let formElementIdentifier in this.state.orderForm) {
+            formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value; //key value=> email: simona@mail.com
         }
 
-        axios.post('/orders.json', orderData)
+        const order = {
+            ingredients: this.props.ingredients,
+            price: this.props.totalPrice,
+            orderData: formData
+        }
+
+        axios.post('/orders.json', order)
             .then(response => {
                 this.setState({loading: false});
                 this.props.history.push('/');
@@ -106,7 +111,7 @@ class ContactData extends Component {
         }
 
         let form = (
-            <form>
+            <form onSubmit={this.orderHandler}>
                 {formElementsArray.map(formElement => (
                     <Input
                         key={formElement.id}
