@@ -31,11 +31,16 @@ endpoints to the DB
 
 ### Install routing package
 `npm install --save react-router-dom@5.3.0`
-## App UI 
+
+### Install Redux for React for state management
+`npm install --save redux react-redux`
+
+
+## App UI Preview
 
 ![img_1.png](img_1.png)
 
-### Order Summary
+### Order Summary Preview
 
 ![img.png](img.png)
 
