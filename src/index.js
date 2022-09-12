@@ -5,10 +5,11 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
-import {createStore} from "redux";
+import {createStore, applyMiddleware} from "redux";
 import reducer from './store/reducer';
+import {logger} from "./middleware";
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(logger));
 
 const app = (
     <Provider store={store}>
