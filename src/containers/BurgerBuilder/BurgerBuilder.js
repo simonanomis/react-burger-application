@@ -9,6 +9,7 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import { connect } from "react-redux";
 import * as burgerBuilderActions from "../../store/actions/index";
+import { error } from "autoprefixer/lib/utils";
 
 class BurgerBuilder extends Component {
   state = {
@@ -18,6 +19,7 @@ class BurgerBuilder extends Component {
 
   componentDidMount() {
     console.log(this.props);
+    this.props.onInitIngredients();
   }
 
   orderingHandler = () => {
@@ -53,7 +55,7 @@ class BurgerBuilder extends Component {
 
     let orderSummary = null;
 
-    let burger = this.state.error ? (
+    let burger = this.props.error ? (
       <p>The ingredients can not be loaded!</p>
     ) : (
       <Spinner />
@@ -101,6 +103,7 @@ const mapStateToProps = (state) => {
   return {
     ingredients: state.ingredients,
     totalPrice: state.totalPrice,
+    error: state.error,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -109,6 +112,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(burgerBuilderActions.addIngredient(name)),
     onRemoveIngredient: (name) =>
       dispatch(burgerBuilderActions.removeIngredient(name)),
+    onInitIngredients: () =>
+      dispatch(burgerBuilderActions.fetchIngredientsInitially()),
   };
 };
 
