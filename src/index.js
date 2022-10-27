@@ -15,7 +15,7 @@ import thunk from "redux-thunk";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-  burgerBuilder: burgerBuilderReducer,
+  burgerReducer: burgerBuilderReducer,
   orderReducer: orderReducer,
 });
 
