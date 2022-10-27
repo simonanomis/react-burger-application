@@ -10,7 +10,6 @@ import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import { connect } from "react-redux";
 import * as burgerBuilderActions from "../../store/actions/index";
 import { error } from "autoprefixer/lib/utils";
-import * as actions from "../../store/actions";
 
 class BurgerBuilder extends Component {
   state = {
@@ -19,7 +18,6 @@ class BurgerBuilder extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     this.props.onInitIngredients();
   }
 

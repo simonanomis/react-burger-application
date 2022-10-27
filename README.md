@@ -65,7 +65,6 @@ You will also see any lint errors in the console.
 
 ![img_3.png](img_3.png)
 
-
 ### Mobile Side-drawer
 
-
+![img_4.png](img_4.png)
