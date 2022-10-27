@@ -11,20 +11,20 @@
   padding: 5px;
   margin: 0 5px;
   width: 80px;
-  border: 1px solid darkolivegreen;
+  border: 1px solid salmon;
   cursor: pointer;
   outline: none;
 }
 
 .BuildControl button:disabled {
-  background-color: palegreen;
+  background-color: darksalmon;
   border: 1px solid seagreen;
   color: #ccc;
   cursor: default;
 }
 
 .BuildControl button:hover:disabled {
-  background-color: darkolivegreen;
+  background-color: darksalmon;
   color: #ccc;
   cursor: not-allowed;
 }
@@ -36,23 +36,23 @@
 }
 
 .BuildControl .Less {
-  background-color: mediumseagreen;
+  background-color: darksalmon;
   color: white;
 }
 
 .BuildControl .More {
-  background-color: yellowgreen;
+  background-color: salmon;
   color: white;
 }
 
 .BuildControl .Less:hover,
 .BuildControl .Less:active {
-  background-color: darkolivegreen;
+  background-color: salmon;
   color: white;
 }
 
 .BuildControl .More:hover,
 .BuildControl .More:active {
-  background-color: darkolivegreen;
+  background-color: salmon;
   color: white;
 }

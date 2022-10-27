@@ -51,16 +51,21 @@ You will also see any lint errors in the console.
 
 ## App UI Preview
 
-![img_1.png](img_1.png)
+![img.png](img.png)
 
 ### Order Summary Preview
 
-![img.png](img.png)
+![img_1.png](img_1.png)
 
-### Mobile Sidedrawer
+### Continue to Checkout 
 
 ![img_2.png](img_2.png)
 
-### Checkout Contact Data
+### Enter Contact Data
 
 ![img_3.png](img_3.png)
+
+
+### Mobile Side-drawer
+
+
