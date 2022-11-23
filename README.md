@@ -68,3 +68,6 @@ You will also see any lint errors in the console.
 ### Mobile Side-drawer
 
 ![img_4.png](img_4.png)
+
+### Authentication of users
+![img_5.png](img_5.png)
